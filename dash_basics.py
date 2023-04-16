@@ -1,9 +1,6 @@
-# Import required packages
 import pandas as pd
 import plotly.express as px
-import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import Dash,html,dcc
 
 # Read the airline data into pandas dataframe
 airline_data =  pd.read_csv('airline_data.csv', 
@@ -19,7 +16,7 @@ fig = px.pie(data, values='Flights', names='DistanceGroup', title='Distance grou
 
 
 # Create a dash application
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 # Get the layout of the application and adjust it.
 # Create an outer division using html.Div and add title to the dashboard using html.H1 component
